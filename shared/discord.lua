@@ -37,8 +37,8 @@ Shared.dsc = {
 
     options = {
 
-        { text = 'Join our Discord!', url = 'fivem://connect/localhost:30120' },
+        { text = 'Join our Discord!', link = 'fivem://connect/localhost:30120' },
 
-        { text = 'Join Our Server!', url = 'fivem://connect/localhost:30120' }
+        { text = 'Join Our Server!', link = 'fivem://connect/localhost:30120' }
     }
 }
