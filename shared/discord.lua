@@ -5,9 +5,6 @@
 
 Shared.dsc = {
 
-    -- set framework (use "ox", "esx", or "qb")
-    framework = 'fuckin_stuff',
-
     -- choose to enable / disable presence
     isActive = false,
 
