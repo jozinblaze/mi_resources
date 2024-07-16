@@ -4,9 +4,7 @@ local txt1, txt2 = Disc.dsc.img1_txt, Disc.dsc.img2_txt
 local updt, plct, plmx = Disc.dsc.update, Disc.dsc.displayCount, Disc.dsc.playerMax
 
 CreateThread(function()
-    while true do
-        if Disc.dsc.isActive then
-            -- get app id
+    while Disc.dsc.isActive do
         SetDiscordAppId(appID)
 
         -- set large icon / text
@@ -32,7 +30,5 @@ CreateThread(function()
 
         -- period to call again
         Citizen.Wait(updt)
-        end
-
     end
 end)
