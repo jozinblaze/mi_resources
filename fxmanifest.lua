@@ -15,8 +15,8 @@ description 'collection of server preferences'
 dependencies { '/server:7290', '/onesync', 'ox_lib', 'ox_target' }
 
 --[[    manifest information    ]]--
-shared_scripts { '@ox_lib/init.lua', 'shared/*.lua', 'data/*.lua' }
+shared_scripts { '@ox_lib/init.lua', 'shared/*.lua' }
 
-client_scripts { '@ox_core/imports/client.lua', 'client/**/*.lua' }
+client_scripts { 'client/**/*.lua' }
 
 server_scripts { '@oxmysql/lib/MySQL.lua', 'server/**/*.lua' }

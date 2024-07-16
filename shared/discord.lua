@@ -1,9 +1,9 @@
 --[[    Discord Rich Presence   ]]--
-
+Disc = {}
 --[[        For Reference       ]]--
 -- https://discord.com/developers/docs/rich-presence/how-to
 
-Shared.dsc = {
+Disc.dsc = {
 
     -- choose to enable / disable presence
     isActive = false,

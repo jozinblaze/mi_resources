@@ -1,12 +1,12 @@
-local appID, options = Shared.dsc.appID, Shared.dsc.options
-local img1, img2 = Shared.dsc.img1, Shared.dsc.img2
-local txt1, txt2 = Shared.dsc.img1_txt, Shared.dsc.img2_txt
-local updt, plct, plmx = Shared.dsc.update, Shared.dsc.displayCount, Shared.dsc.playerMax
+local appID, options = Disc.dsc.appID, Disc.dsc.options
+local img1, img2 = Disc.dsc.img1, Disc.dsc.img2
+local txt1, txt2 = Disc.dsc.img1_txt, Disc.dsc.img2_txt
+local updt, plct, plmx = Disc.dsc.update, Disc.dsc.displayCount, Disc.dsc.playerMax
 
 CreateThread(function()
-    while Shared.dsc.isActive do
-
-        -- get app id
+    while true do
+        if Disc.dsc.isActive then
+            -- get app id
         SetDiscordAppId(appID)
 
         -- set large icon / text
@@ -32,5 +32,7 @@ CreateThread(function()
 
         -- period to call again
         Citizen.Wait(updt)
+        end
+
     end
 end)
