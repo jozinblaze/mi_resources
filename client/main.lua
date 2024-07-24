@@ -17,25 +17,25 @@ end)
 
 Citizen.CreateThread(function()
 	while true do
-        Citizen.Wait(50)
+        Citizen.Wait(0)
         --[[    Disabling Basic Hud Aspects    ]]--
         if Shared.disable_defaulthud then
+            HideHudComponentThisFrame(1)
             HideHudComponentThisFrame(2)
             HideHudComponentThisFrame(3)
             HideHudComponentThisFrame(4)
+            HideHudComponentThisFrame(5)
             HideHudComponentThisFrame(6)
             HideHudComponentThisFrame(7)
             HideHudComponentThisFrame(8)
             HideHudComponentThisFrame(9)
+            HideHudComponentThisFrame(10)
+            HideHudComponentThisFrame(11)
+            HideHudComponentThisFrame(12)
+            HideHudComponentThisFrame(13)
+            HideHudComponentThisFrame(17)
+            HideHudComponentThisFrame(20)
             DisplayRadar(false)
-        end
-        --[[    Disabling Dispatch    ]]--
-        if Shared.disable_dispatch then
-            Citizen.Wait(350)
-            for i = 1, 12 do
-                EnableDispatchService(i, false)
-            end
-            ClearAreaOfCops(0.0, 0.0, 0.0, 10000.0, true)
         end
         --[[    Disabling Native Aiming Reticle    ]]--
         if Shared.disable_aimreticle then
@@ -57,6 +57,14 @@ Citizen.CreateThread(function()
         --[[    Disabling Idle Camera   ]]--
         if Shared.disable_idlecam then
             DisableIdleCamera(true)
+        end
+        --[[    Disabling Dispatch  ]]--
+        if Shared.disable_dispatch then
+            Wait(500)
+            for i = 1, 15 do
+                EnableDispatchService(i, false)
+            end
+            ClearAreaOfCops(0.0, 0.0, 0.0, 10000.0, true)
         end
     end
 end)
