@@ -9,9 +9,6 @@ Shared.disable_weapondrop = true
 -- disable native dispatch services
 Shared.disable_dispatch = true
 
--- disables player putting helmet on
-Shared.disable_autohelm = true
-
 -- disables key that enables vehicle radios
 Shared.disable_radios = true
 

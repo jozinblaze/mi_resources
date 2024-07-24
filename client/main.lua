@@ -60,7 +60,7 @@ Citizen.CreateThread(function()
         end
         --[[    Disabling Dispatch  ]]--
         if Shared.disable_dispatch then
-            Wait(500)
+            Wait(1500)
             for i = 1, 15 do
                 EnableDispatchService(i, false)
             end
