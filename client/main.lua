@@ -15,31 +15,9 @@ AddEventHandler('onResourceStart', function()
 	end
 end)
 
---[[    Disabling Auto-Place Helmet    ]]--
-Citizen.CreateThread( function()
-    while Shared.disable_autohelm do
-      Citizen.Wait(100)
-      local playerPed = GetPlayerPed(-1)
-      local playerVeh = GetVehiclePedIsUsing(playerPed)
-  
-      if playerVeh ~= 0 then RemovePedHelmet(playerPed,true) end
-    end	
-  end)
-
---[[    Disabling Dispatch    ]]--
-Citizen.CreateThread(function()
-	while Shared.disable_dispatch do
-		Citizen.Wait(350)
-		for i = 1, 12 do
-			EnableDispatchService(i, false)
-		end
-		ClearAreaOfCops(0.0, 0.0, 0.0, 10000.0, true)
-	end
-end)
-
 Citizen.CreateThread(function()
 	while true do
-        Citizen.Wait(0)
+        Citizen.Wait(50)
         --[[    Disabling Basic Hud Aspects    ]]--
         if Shared.disable_defaulthud then
             HideHudComponentThisFrame(2)
@@ -50,6 +28,14 @@ Citizen.CreateThread(function()
             HideHudComponentThisFrame(8)
             HideHudComponentThisFrame(9)
             DisplayRadar(false)
+        end
+        --[[    Disabling Dispatch    ]]--
+        if Shared.disable_dispatch then
+            Citizen.Wait(350)
+            for i = 1, 12 do
+                EnableDispatchService(i, false)
+            end
+            ClearAreaOfCops(0.0, 0.0, 0.0, 10000.0, true)
         end
         --[[    Disabling Native Aiming Reticle    ]]--
         if Shared.disable_aimreticle then
