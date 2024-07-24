@@ -13,6 +13,20 @@ AddEventHandler('onResourceStart', function()
 		StatSetInt('MP0_FLYING_ABILITY', Shared.skills.value, Shared.skills.active)
 		StatSetInt('MP0_STEALTH_ABILITY', Shared.skills.value, Shared.skills.active)
 	end
+    if Shared.disable_idlecam then
+        DisableIdleCamera(true)
+    end
+end)
+
+--[[    Disabling Dispatch  ]]--
+Citizen.CreateThread(function()
+	while Shared.disable_dispatch do
+		Wait(1000)
+		for i = 1, 12 do
+			EnableDispatchService(i, false)
+		end
+		ClearAreaOfCops(0.0, 0.0, 0.0, 10000.0, true)
+	end
 end)
 
 Citizen.CreateThread(function()
@@ -53,18 +67,6 @@ Citizen.CreateThread(function()
         --[[    Adjust Water Intensity    ]]--
         if Shared.adjust_water.active then
             WaterOverrideSetStrength(Shared.adjust_water.value)
-        end
-        --[[    Disabling Idle Camera   ]]--
-        if Shared.disable_idlecam then
-            DisableIdleCamera(true)
-        end
-        --[[    Disabling Dispatch  ]]--
-        if Shared.disable_dispatch then
-            Wait(1500)
-            for i = 1, 15 do
-                EnableDispatchService(i, false)
-            end
-            ClearAreaOfCops(0.0, 0.0, 0.0, 10000.0, true)
         end
     end
 end)
