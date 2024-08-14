@@ -49,7 +49,7 @@ Citizen.CreateThread(function()
             HideHudComponentThisFrame(13)
             HideHudComponentThisFrame(17)
             HideHudComponentThisFrame(20)
-            DisplayRadar(false)
+            --DisplayRadar(false)
         end
         --[[    Disabling Native Aiming Reticle    ]]--
         if Shared.disable_aimreticle then
