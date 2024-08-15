@@ -62,7 +62,7 @@ Citizen.CreateThread(function()
         end
         --[[    Disable Weapon Drops    ]]--
         if Shared.disable_weapondrop then
-            RemoveWeaponDrops();
+            RemoveAllPickupsOfType(14)
         end
         --[[    Adjust Water Intensity    ]]--
         if Shared.adjust_water.active then
